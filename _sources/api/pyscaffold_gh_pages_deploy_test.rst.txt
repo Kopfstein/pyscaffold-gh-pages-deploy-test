@@ -1,0 +1,21 @@
+pyscaffold\_gh\_pages\_deploy\_test package
+===========================================
+
+Submodules
+----------
+
+pyscaffold\_gh\_pages\_deploy\_test.skeleton module
+---------------------------------------------------
+
+.. automodule:: pyscaffold_gh_pages_deploy_test.skeleton
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pyscaffold_gh_pages_deploy_test
+   :members:
+   :undoc-members:
+   :show-inheritance:
