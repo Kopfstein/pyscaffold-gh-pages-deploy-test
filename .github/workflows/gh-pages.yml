@@ -45,7 +45,6 @@ jobs:
         shell: bash
         run: |
           tox -e docs
-          ls docs
       - name: Push documentation to gh-pages
         shell: bash
         run: |
@@ -53,4 +52,6 @@ jobs:
           touch $DIR_HTML/.nojekyll
           git add -f $DIR_HTML
           git commit -m "Update build documentation"
-          git push --force origin $(git subtree split --prefix $DIR_HTML main):gh-pages
+          SUBTREE=$(git subtree split --prefix $DIR_HTML main)
+          echo "$SUBTREE"
+          git push --force origin "$SUBTREE":gh-pages
