@@ -1,7 +1,10 @@
-name: gh-pages
+name: gh-pages-deploy
 on: 
   issue_comment:
     types: [created, deleted]
+    
+workflow_dispatch:
+    
 jobs:
   gh-pages-deploy:
     runs-on: ubuntu-latest
