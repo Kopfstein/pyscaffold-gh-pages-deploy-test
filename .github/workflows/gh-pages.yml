@@ -22,6 +22,8 @@ jobs:
       - name: Configure git
         shell: bash
         run: |
+          echo $(git show --format=%an -s)
+          echo $(git show --format=%ae -s)
           git config user.name pyscaffold-gh-pages-deploy
           git config user.email pyscaffold-gh-pages-deploy@users.noreply.github.com
       - name: Create branch gh-pages if necessary
@@ -52,6 +54,5 @@ jobs:
           touch $DIR_HTML/.nojekyll
           git add -f $DIR_HTML
           git commit -m "Update build documentation"
-          SUBTREE=$(git subtree split --prefix $DIR_HTML main)
-          echo "$SUBTREE"
-          git push --force origin "$SUBTREE":gh-pages
+          REFSPEC_SOURCE=$(git subtree split --prefix $DIR_HTML main)
+          git push --force origin "$REFSPEC_SOURCE":gh-pages
