@@ -1,5 +1,7 @@
 name: gh-pages
-on: [push]
+on: 
+  issue_comment:
+    types: [created, deleted]
 jobs:
   gh-pages-deploy:
     runs-on: ubuntu-latest
