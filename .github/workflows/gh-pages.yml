@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: 3.8
       - name: Deploy docs to GitHub Pages
-        uses: Kopfstein/pyscaffold-gh-pages-deploy@v0.0.1
+        uses: Kopfstein/pyscaffold-gh-pages-deploy@v0.1.0
