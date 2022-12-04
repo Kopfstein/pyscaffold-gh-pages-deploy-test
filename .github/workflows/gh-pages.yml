@@ -19,6 +19,11 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install tox
+      - name: Configure git
+        shell: bash
+        run: |
+          git config user.name pyscaffold-gh-pages-deploy
+          git config user.email noreply@pyscaffold-gh-pages-deploy.com
       - name: Create branch gh-pages if necessary
         shell: bash
         run: |
