@@ -12,47 +12,5 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-      - name: Install dependencies
-        shell: bash
-        run: |
-          pip install --upgrade pip
-          pip install tox
-      - name: Configure git
-        shell: bash
-        run: |
-          echo $(git show --format=%an -s)
-          echo $(git show --format=%ae -s)
-          git config user.name pyscaffold-gh-pages-deploy
-          git config user.email pyscaffold-gh-pages-deploy@users.noreply.github.com
-      - name: Create branch gh-pages if necessary
-        shell: bash
-        run: |
-          if [[ -z $(git ls-remote --heads origin gh-pages) ]]; then
-            echo "Creating gh-pages branch"
-            git checkout --orphan gh-pages
-            git reset --hard
-            git commit --allow-empty -m "Create Branch gh-pages"
-            git push origin gh-pages
-            echo "Created gh-pages branch"
-          else
-            echo "Branch gh-pages already exists"
-          fi
-      - name: Checkout main
-        shell: bash
-        run: |
-          git checkout main
-      - name: Build documentation
-        shell: bash
-        run: |
-          tox -e docs
-      - name: Push documentation to gh-pages
-        shell: bash
-        run: |
-          DIR_HTML="docs/_build/html/"
-          touch $DIR_HTML/.nojekyll
-          git add -f $DIR_HTML
-          git commit -m "Update build documentation"
-          REFSPEC_SOURCE=$(git subtree split --prefix $DIR_HTML main)
-          git push --force origin "$REFSPEC_SOURCE":gh-pages
+      - name: Deploy docs to GitHub Pages
+        uses: Kopfstein/pyscaffold-gh-pages-deploy@v0.0.1
