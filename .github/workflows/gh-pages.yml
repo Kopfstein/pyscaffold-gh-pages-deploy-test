@@ -1,7 +1,5 @@
 name: gh-pages-deploy
 on: 
-  issue_comment:
-    types: [created, deleted]
   workflow_dispatch:
     
 jobs:
