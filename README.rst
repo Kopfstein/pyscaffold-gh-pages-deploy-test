@@ -13,7 +13,7 @@ pyscaffold-gh-pages-deploy-test
     Testing pyscaffold-gh-pages-deploy Github Action.
 
 
-This repository is a test environment for the `pyscaffold-gh-pages-deploy <https://kopfstein.github.io/pyscaffold-gh-pages-deploy-test/>`_ Github Action.
+This repository is a demo/test environment for the `pyscaffold-gh-pages-deploy <https://github.com/Kopfstein/pyscaffold-gh-pages-deploy>`_ Github Action.
 
 See https://kopfstein.github.io/pyscaffold-gh-pages-deploy-test/ for generated documentation on
 GitHub Pages.
