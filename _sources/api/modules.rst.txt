@@ -1,0 +1,7 @@
+pyscaffold_gh_pages_deploy_test
+===============================
+
+.. toctree::
+   :maxdepth: 4
+
+   pyscaffold_gh_pages_deploy_test
